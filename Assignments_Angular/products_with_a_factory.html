@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app = 'app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Products With A Factory</title>
+    <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+    <script type="text/javascript">
+
+    var app = angular.module('app',[]);
+/////////////////////// START FACTORY ///////////////////////
+    app.factory('productFactory',function($http){
+      var factory = {};
+      var products = [];
+
+      factory.index = function(callback){
+      }
+
+      factory.create = function(product,callback){
+        products.push(product);
+
+      }
+
+      factory.delete = function(id, callback){
+        products.splice(id,1);
+      }
+      return factory;
+    })
+/////////////////////// END FACTORY ///////////////////////
+
+/////////////////////// START CONTROLLER ///////////////////////
+    app.controller('productController',function($scope, productFactory){
+
+      function setProducts(data){
+        $scope.products = data;
+        $scope.products = {};
+      }
+
+      $scope.create = function(){
+        productFactory.create($scope.product, setProducts)
+      }
+
+
+      $scope.delete = function(id){
+        productFactory.delete(id,setProducts);
+      }
+    })
+  /////////////////////// END CONTROLLER ///////////////////////
+    </script>
+  </head>
+  <body>
+
+    <div ng-controller = 'productController'>
+      <form ng-submit = 'create()'>
+        <h1>Products Controller:</h1>
+        <p>Product Name: <input type="text" ng-model= "product.name"></p>
+        <p>Product Price: <input type="number" ng-model= "product.price"></p>
+        <input type="submit" value="Add Product">
+      </form>
+
+      <br>
+      <br>
+
+      <table>
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Test 1</td>
+            <td>Test 2</td>
+            <td>Test 3</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<table ng-controller = "UserListController">
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+      <td>Fav Language</td>
+    </tr>
+  </thead>
+  <tbody ng-repeat = "user in users">
+    <tr>
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.favLanguage}}</td>
+      <td>{{$index}}</td>
+      <td><button ng-click ="delete($index)">Delete User</button></td>
+    </tr>
+  </tbody>
+</table>

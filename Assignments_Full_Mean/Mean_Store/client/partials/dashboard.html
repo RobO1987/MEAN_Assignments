@@ -1,0 +1,25 @@
+<h2>Dashboard</h2>
+<input type="text" name="" value="search">
+
+<h3>Products</h3>
+  <div ng-repeat = 'product in products' ng-show = '$index < 6'>
+    <span>{{product.name}}</span>
+  </div>
+  <br>
+  <a href="#!/products">Show All Products</a>
+
+
+<h3>Recent Orders</h3>
+  <div ng-repeat = 'order in orders' ng-show = '$index < 6'>
+    <span>{{order.customer.name}} ordered {{order.quantity}} of {{order.product.name}}</span>
+  </div>
+  <br>
+  <a href="#!/orders">Show All Orders</a>
+
+
+<h3>New Customers</h3>
+  <div ng-repeat = 'customer in customers | orderBy:"-createdAt"' ng-show = '$index < 6'>
+    <span>{{customer.name}}</span>
+  </div>
+  <br>
+  <a href="#!/customers">Show All Customers</a>

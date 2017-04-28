@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+  </head>
+  <body>
+    <h1>Index Page</h1>
+    <form action="/users" method="post">
+      Name: <input type="text" name="name" value="">
+      Age: <input type="text" name="age" value="">
+      <input type="submit" name="" value="submit">
+    </form>
+
+    <%= msg[0] %>
+    <br>
+    <%= msg[1] %>
+
+    <h2>Display Users</h2>
+    <% for (index in users){ %>
+    <p> <%= users[index].name %> </p>
+    <p> <%= users[index].age %> </p>
+    <% } %>
+
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Detail Page</title>
+  </head>
+  <body>
+    <h1>Detail Page</h1>
+    <% for(index in liger) {%>
+    <p> <%= liger[index].name %></p>
+    <a href="/liger/edit/<%= liger[index]._id %>">Edit</a>
+
+    <form action="/liger/destroy/<%= liger[index]._id %>" method="post">
+    <input type="submit" name="" value="Destroy Liger!">
+    </form>
+    <% } %>
+    
+  </body>
+</html>

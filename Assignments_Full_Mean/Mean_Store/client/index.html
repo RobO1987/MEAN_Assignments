@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="meanStoreApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Index File</title>
+    <script src="/angular/angular.js" charset="utf-8"></script>
+    <script src="/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="/angular-cookies/angular-cookies.js" charset="utf-8"></script>
+    <script src="/angular-messages/angular-messages.js" charset="utf-8"></script>
+    <script src="./app.js" charset="utf-8"></script>
+    <script src="factories/storeFactory.js" charset="utf-8"></script>
+    <script src="controllers/customersController.js" charset="utf-8"></script>
+    <script src="controllers/dashboardController.js" charset="utf-8"></script>
+    <script src="controllers/ordersController.js" charset="utf-8"></script>
+    <script src="controllers/productsController.js" charset="utf-8"></script>
+    <script src="controllers/settingsController.js" charset="utf-8"></script>
+  </head>
+
+  <body>
+    <h1>MEAN Store</h1>
+    <div class="topBarLinks">
+      <a href="#!/dashboard">Dashboard</a>
+      <a href="#!/products">Products</a>
+      <a href="#!/orders">Orders</a>
+      <a href="#!/customers">Customers</a>
+      <a href="#!/settings">Settings</a>
+    </div>
+
+    <div ng-view="">
+    </div>
+
+  </body>
+</html>

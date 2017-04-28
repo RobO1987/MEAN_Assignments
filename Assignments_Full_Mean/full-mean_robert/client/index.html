@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app= "itemsApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Items App</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="/angular/angular.js" charset="utf-8"></script>
+    <script src="/angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="/app.js"></script>
+  </head>
+  <body>
+    <ul>
+      <li><a href="/#!/new">New Item</a></li>
+      <li><a href="/#!/index">Items Index</a></li>
+    </ul>
+    <div ng-view="">
+
+    </div>
+  </body>
+</html>

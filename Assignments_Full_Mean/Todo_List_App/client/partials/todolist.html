@@ -1,0 +1,19 @@
+<h3>Todo</h3>
+<table>
+  <thead>
+    <tr>
+      <td>Item</td>
+      <td>Due Date</td>
+      <td>Completed?</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat = 'todo in todos'>
+      <td>{{todo.todoItem}}</td>
+      <td>{{todo.dueDate}}</td>
+      <form>
+        <td><input type="checkbox" value="{{todo.completed}}"></td>
+      </form>
+    </tr>
+  </tbody>
+</table>

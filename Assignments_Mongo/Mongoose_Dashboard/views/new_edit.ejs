@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Page</title>
+  </head>
+  <body>
+    <h1>Edit</h1>
+      <% for (index in liger) {%>
+      <form action="/liger/<%= liger[index]._id %>" method="post">
+        Liger Name: <input type="text" name="name" value="<%= liger[index].name %>" >
+        <% } %>
+      <input type="submit" value="submit">
+    </form>
+  </body>
+</html>

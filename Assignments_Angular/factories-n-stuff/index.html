@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="facApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+
+var app = angular.module("facApp", []);
+
+app.factory("thingFactory", function () {
+    var factory = { };
+    factory.things = [];
+    factory.addThing = function (thing) {
+        if (!thing.text) {
+            console.log("INVALID");
+        } else {
+            factory.things.push(thing);
+            console.log("PUSHED:", factory.things);
+        }
+    }
+    return factory;
+});
+
+app.controller("writerController", function ($scope, thingFactory) {
+    console.log("IN WRITER:", thingFactory);
+    $scope.$saddThing = function () {
+        thingFactory.addThing($scope.thing);
+        $scope.thing = {};
+    };
+});
+
+app.controller("readerController", function ($scope, thingFactory) {
+    console.log("IN READER:", thingFactory);
+    $scope.things = thingFactory.things;
+});
+
+    </script>
+
+    <title>Factory App</title>
+</head>
+<body>
+    <div ng-controller="writerController">
+        <input type="text" ng-model="thing.text">
+        <button ng-click="$saddThing()">ADD</button>
+    </div>
+    <hr>
+    <div ng-controller="readerController">
+        <ul>
+            <li ng-repeat="thing in things">{{ thing.text }}</li>
+        </ul>
+    </div>
+</body>
+</html>

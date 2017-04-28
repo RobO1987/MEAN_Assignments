@@ -1,0 +1,7 @@
+<h3>Create New</h3>
+<form>
+  <p>New Item: <input ng-model='newTodo.todoItem'></p>
+  <p>New Item Due Date: <input type='Date' ng-model='newTodo.dueDate'></p>
+  <p>  <input type="hidden" ng-model='newTodo.completed' value="true"></p>
+  <input type="submit" ng-click='addTodo()' value='Create'>
+</form>
